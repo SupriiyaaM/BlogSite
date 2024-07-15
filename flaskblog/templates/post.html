@@ -11,11 +11,11 @@
         <a style="font-size: 11pt;" href="{{  url_for('users.user_posts', username=post.author.username)  }}"> posted by @{{ post.author.username }} </a> 
         <div> <br>
           {% if post.author == current_user %} 
-              <div>
-                  <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('posts.update_post', post_id=post.id) }}"> Update </a>
-                  <button class="btn btn-danger btn-sm mb-1" data-toggle="modal" data-target="#deleteModal"> Delete </button> <!-- bootstrap modal, hence button and not link-->
-              </div>
-              {% endif %}
+            <div class="d-flex flex-column align-items">
+              <button type="button" class="btn btn-danger btn-sm m-1" style= "background-color: #80669d" data-toggle= "modal" data-target="#deleteModal">Delete</button>
+              <a class="btn btn-success btn-sm mt-1 mb-1" style="background-color: #a881af;" href="{{ url_for('posts.update_post', post_id=post.id) }}">Update</a>
+            </div>  
+          {% endif %}
         </div>   
 
       </div>
